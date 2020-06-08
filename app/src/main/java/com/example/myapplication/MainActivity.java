@@ -34,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
        private void getUsers(){
-           ApiInterface client =  NetworkClient.getRetrfitClient().create(ApiInterface.class);
+           ApiInterface client;
+           client = NetworkClient.getRetrfitClient().create(ApiInterface.class);
            Call<UserModel> call;
            call = client.getUsers();
            call.enqueue(new Callback<UserModel>() {
